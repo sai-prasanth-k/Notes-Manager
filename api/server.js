@@ -13,6 +13,6 @@ connectToDB()
 
 app.use('/api', notesRoutes);
 
-app.listen(5000, () => {
+app.listen(process.env.APPLICATION_URL, () => {
     console.log(`Server Started at ${5000}`);
 });
