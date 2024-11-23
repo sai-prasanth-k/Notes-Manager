@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
+import { dotenv } from 'dotenv';
 import { NoteButton, NoteButtonContainer, EditInput, EditButtonContainer, EditText, EditSelect,  NoteItemEdit, NoteDescription, NoteHeading, NoteItemDisplay, EditButton } from './styledComponent';
+dotenv.config()
 
 const NoteItem = ({note, onDelete, onUpdate}) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -10,7 +12,7 @@ const NoteItem = ({note, onDelete, onUpdate}) => {
     const handleUpdate = async () => {
         const updatedNote = {title, description, category};
         try {
-            const response = await fetch(`http://localhost:5000/api/notes/${note._id}`, {
+            const response = await fetch(`${process.env.BACKEND_URL}/api/notes/${note._id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedNote)
