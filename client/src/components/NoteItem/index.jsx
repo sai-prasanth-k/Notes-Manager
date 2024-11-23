@@ -12,7 +12,7 @@ const NoteItem = ({note, onDelete, onUpdate}) => {
     const handleUpdate = async () => {
         const updatedNote = {title, description, category};
         try {
-            const response = await fetch(`${process.env.BACKEND_URL}notes/${note._id}`, {
+            const response = await fetch(`${process.env.BACKEND_URL}/api/notes/${note._id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(updatedNote)
