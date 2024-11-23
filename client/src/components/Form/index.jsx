@@ -35,7 +35,7 @@ const Form = ({onAdd}) => {
   return (
     <FormCardPage>
       <FormContainer onSubmit={handleSubmit}>
-        <FormHeading className='add-transaction-heading'>Add Transaction</FormHeading>
+        <FormHeading className='add-transaction-heading'>Add Note</FormHeading>
         <InputContainer>
           <FormLabel htmlFor="title">TITLE</FormLabel>
           <FormInput className='input-field' type="texxt" id="title" name="title" onChange={handleChanges} value={formData.title} placeholder='Enter the title' />
