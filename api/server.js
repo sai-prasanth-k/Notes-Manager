@@ -7,11 +7,7 @@ const connectToDB = require('./db/connectToDB')
 
 const app = express()
 
-const corsOption = {
-    origin: process.env.APPLICATION_URL,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}
-app.use(cors(corsOption))
+app.use(cors())
 app.use(bodyParser.json());
 
 connectToDB()
