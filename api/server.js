@@ -1,5 +1,4 @@
 const express = require('express')
-const router = express.Router();
 const notesRoutes = require('./routes/notesRoutes')
 const cors = require('cors')
 const bodyParser = require('body-parser')
