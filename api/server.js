@@ -6,7 +6,12 @@ const bodyParser = require('body-parser')
 const connectToDB = require('./db/connectToDB')
 
 const app = express()
-app.use(cors())
+
+const corsOption = {
+    origin: process.env.APPLICATION_URL,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}
+app.use(cors(corsOption))
 app.use(bodyParser.json());
 
 connectToDB()
